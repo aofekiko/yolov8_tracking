@@ -239,7 +239,7 @@ def run(
                         id = output[4]
                         cls = output[5]
                         conf = output[6]
-                        trajectory = output[7]
+                        #trajectory = output[7]
 
                         if save_txt:
                             # to MOT format
@@ -247,11 +247,11 @@ def run(
                             bbox_top = output[1]
                             bbox_w = output[2] - output[0]
                             bbox_h = output[3] - output[1]
-                            coco_class = int(cls)
+                            c = int(cls)
                             # Write MOT compliant results to file
                             with open(txt_path + '.txt', 'a') as f:
                                 f.write(('%g ' * 10 + '\n') % (frame_idx + 1, id, bbox_left,  # MOT format
-                                                               bbox_top, bbox_w, bbox_h, coco_class, conf, -1, i))
+                                                               bbox_top, bbox_w, bbox_h, names[c]+'-'+c, conf, -1, i))
 
                         if save_vid or save_crop or show_vid:  # Add bbox/seg to image
                             c = int(cls)  # integer class
