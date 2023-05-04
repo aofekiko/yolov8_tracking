@@ -248,7 +248,7 @@ def run(
                             bbox_w = output[2] - output[0]
                             bbox_h = output[3] - output[1]
                             c = int(cls)
-                            fileout=str(frame_idx + 1)+", "+str(id)+", "+str(bbox_left)+", "+str(bbox_top)+", "+str(bbox_w)+", "+str(bbox_h)+", "+names[c]+'-'+str(c)+", "+str(conf)
+                            fileout=str(frame_idx + 1)+", "+str(id)+", "+str(bbox_left)+", "+str(bbox_top)+", "+str(bbox_w)+", "+str(bbox_h)+", "+names[c]+'-'+str(c)+", "+str(conf)+"\n"
                             # Write MOT compliant results to file
                             with open(txt_path + '.txt', 'a') as f:
                                 f.write(fileout)
