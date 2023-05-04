@@ -251,7 +251,7 @@ def run(
                             # Write MOT compliant results to file
                             with open(txt_path + '.txt', 'a') as f:
                                 f.write(('%g ' * 10 + '\n') % (frame_idx + 1, id, bbox_left,  # MOT format
-                                                               bbox_top, bbox_w, bbox_h, names[c]+'-'+c, conf, -1, i))
+                                                               bbox_top, bbox_w, bbox_h, names[c]+'-'+str(c), conf, -1, i))
 
                         if save_vid or save_crop or show_vid:  # Add bbox/seg to image
                             c = int(cls)  # integer class
