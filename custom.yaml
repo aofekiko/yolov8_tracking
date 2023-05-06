@@ -1,0 +1,8 @@
+train: /content/drive/MyDrive/ofekproj/training/images
+test: /content/drive/MyDrive/ofekproj/test/images
+
+#Classes
+nc: 1
+
+#classes names
+names: ['pingpong_ball']
