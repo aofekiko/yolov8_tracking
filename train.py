@@ -2,7 +2,7 @@ import json
 import os
 import glob
 
-basepath="/content/drive/MyDrive/ofekproj"
+basepath="/mnt/c/Users/aofek/Desktop/proj"
 markup_json_path_glob=basepath+"/training/annotations/*/ball_markup.json"
 
 for markup_file in list(glob.glob(markup_json_path_glob)):
@@ -14,5 +14,6 @@ for markup_file in list(glob.glob(markup_json_path_glob)):
             y=item[1]['y']
             if (x!=-1 and y!=-1):
                 newdata = f"32 {x - 20} {y - 20} 40 40\n"
-                with open(imagespath + f"/img_{item[0] : 7d}.txt", "w") as f:
-                    f.write(newdata)
+                print(imagespath + f"/img_{int(item[0]):07d}.txt")
+                with open(imagespath + f"/img_{int(item[0]):07d}.txt", "w") as fw:
+                    fw.write(newdata)
